@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="”ru”" data-framework="javascript">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <title>Список дел</title>
+</head>
+
+<body>
+<div class="todo">
+    <section class="app">
+        <header>
+            <h1>TODO LIST</h1>
+
+            <div class="wripper-input">
+                <i class="arrow" id="arrow-btn"><img src="img/arrow.svg" alt=""/></i>
+                <input
+                        id="input-main"
+                        type="text"
+                        class="new-todo"
+                        autofocus=""
+                        placeholder="Есть важные дела?"
+                />
+            </div>
+        </header>
+        <section class="main">
+            <ul id="list-id" class="list"></ul>
+        </section>
+        <footer class="footer">
+            <ul class="filter-list">
+                <li id="count"><a href="#"></a></li>
+                <li><a href="#">Все</a></li>
+                <li><a href="#">Активные</a></li>
+                <li id="complated"><a href="#">Завершенные</a></li>
+            </ul>
+        </footer>
+    </section>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
