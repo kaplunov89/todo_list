@@ -1,0 +1,172 @@
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.todo {
+  margin: 0 auto;
+  max-width: 600px;
+  margin-top: 80px;
+}
+
+.app {
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+header h1 {
+  font-size: 50px;
+  color: green;
+  opacity: 0.5;
+  font-weight: 600;
+  margin-bottom: 30px;
+  font-family: sans-serif;
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  outline: none;
+}
+
+input.new-todo {
+  font-size: 20px;
+  padding: 14px 14px 14px 42px;
+}
+
+.list.editing #text {
+  display: none;
+}
+
+.list.editing .new-todo {
+  display: block;
+}
+
+ul.list {
+  display: block;
+}
+
+.list {
+  font-size: 26px;
+  display: none;
+}
+
+.list li {
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-top: none;
+  color: green;
+}
+
+.list li:hover {
+  background-color: rgba(227, 233, 231, 0.973);
+}
+
+ul li.checked {
+  background: rgb(158, 123, 123);
+  color: #fff;
+  text-decoration: line-through;
+}
+
+.close {
+  position: relative;
+  top: -43px;
+  right: 15px;
+  float: right;
+  color: red;
+  cursor: pointer;
+  display: block;
+  width: 20px;
+}
+
+#list-id > li > span.close:hover {
+  visibility: visible;
+}
+
+.edit {
+  float: right;
+  position: relative;
+  right: 75px;
+  top: 6px;
+  visibility: hidden;
+  size: 10px;
+  cursor: pointer;
+  color: rgba(153, 102, 8, 0.584);
+  display: block;
+  font-size: 17px;
+  text-align: center;
+}
+
+ul li.editMode input[type='text'] {
+  display: block;
+}
+
+ul li.editMode label {
+  display: none;
+}
+
+li:hover .edit {
+  visibility: visible;
+}
+
+li:hover .close {
+  visibility: visible;
+}
+
+#checkbox-id {
+  float: left;
+  width: 30px;
+  margin: 7px;
+  position: relative;
+  top: -42px;
+}
+
+.list li :checked {
+  text-decoration: line-through;
+  background-color: indianred;
+}
+
+#count {
+  float: left;
+  color: #969595;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+ul.filter-list {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 5px;
+  display: none;
+}
+
+.filter-list li {
+  padding: 5px;
+  margin: 5px;
+}
+
+.filter-list a {
+  color: #969595;
+}
+
+.arrow img {
+  width: 3%;
+  float: left;
+}
+
+.arrow {
+  position: relative;
+  top: 36px;
+  z-index: 1;
+  left: 14px;
+  cursor: pointer;
+}
