@@ -15,37 +15,38 @@ input.addEventListener('keypress', function (event) {
 
 let newTask = () => {
   if (input.value !== '') {
-    let task = document.createElement('li');
-    let taskText = document.createTextNode(input.value);
-    task.appendChild(taskText);
-    ul.appendChild(task);
-
+    let task = document.createElement('li'),
+      link = document.createElement('a'),
+      newTask = input.value;
+    task.innerHTML = newTask;
+    link.appendChild(task);
+    ul.appendChild(link);
     input.value = '';
-  }
-  //Кнопка удалить
-  let deleteTaskBtn = () => {
-    let span = document.createElement('SPAN');
-    let spanText = document.createTextNode('\u00D7');
+
+    //Кнопка удалить
+    let span = document.createElement('SPAN'),
+      spanText = document.createTextNode('\u00D7');
     span.className = 'close';
-    span.append(spanText);
-    ul.appendChild(span);
+    span.appendChild(spanText);
+    link.appendChild(span);
+    let filter = document.querySelector('.filter-list');
+    filter.style.display = 'flex';
     span.addEventListener('click', removeTask);
-  };
-  deleteTaskBtn();
-  let checkedTask = () => {
-    let checkbox = document.createElement('checkbox');
+
+    //Чекбокс
+    let checkbox = document.createElement('input');
+
     checkbox.type = 'checkbox';
     checkbox.id = 'checkbox-id';
-    checkbox.className = 'checkbox-class';
-    checkbox.checked = false;
-    ul.appendChild(checkbox);
-  };
-  checkedTask();
+    // checkbox.className = 'checkbox-class';
+    // checkbox.checked = false;
+    link.appendChild(checkbox);
+    ul.appendChild(link);
+  }
 };
 
 let removeTask = (event) => {
   if (event.target.tagName === 'SPAN') {
-    console.log('Кнопка закрыть');
     let close = event.target.parentNode;
     close.remove();
   }

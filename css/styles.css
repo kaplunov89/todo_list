@@ -121,6 +121,9 @@ li:hover .close {
   margin: 7px;
   position: relative;
   top: -42px;
+  /*! z-index: 5; */
+  font-size: 17px;
+  /*! content: '\26AB'; */
 }
 
 .list li :checked {
@@ -161,6 +164,11 @@ ul.filter-list {
 .arrow img {
   width: 3%;
   float: left;
+  display: block;
+  /*! margin-top: ; */
+  position: relative;
+  top: 39px;
+  left: 10px;
 }
 
 .arrow {
