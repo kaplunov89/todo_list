@@ -61,7 +61,7 @@ ul.list {
 }
 
 .list li:hover {
-  background-color: rgba(227, 233, 231, 0.973);
+  background-color: rgba(217, 245, 236, 0.973);
 }
 
 ul li.checked {
@@ -79,9 +79,10 @@ ul li.checked {
   cursor: pointer;
   display: block;
   width: 20px;
+  visibility: hidden;
 }
 
-#list-id > li > span.close:hover {
+ul#list-id.list a:hover span.close {
   visibility: visible;
 }
 
@@ -99,19 +100,7 @@ ul li.checked {
   text-align: center;
 }
 
-ul li.editMode input[type='text'] {
-  display: block;
-}
-
-ul li.editMode label {
-  display: none;
-}
-
-li:hover .edit {
-  visibility: visible;
-}
-
-li:hover .close {
+.list a .close:hover {
   visibility: visible;
 }
 
@@ -121,12 +110,10 @@ li:hover .close {
   margin: 7px;
   position: relative;
   top: -42px;
-  /*! z-index: 5; */
   font-size: 17px;
-  /*! content: '\26AB'; */
 }
 
-.list li :checked {
+.checked {
   text-decoration: line-through;
   background-color: indianred;
 }
@@ -151,7 +138,12 @@ ul.filter-list {
   margin-top: 5px;
   display: none;
 }
-
+.all-count {
+  float: left;
+  position: relative;
+  left: -119px;
+  color: #969595;
+}
 .filter-list li {
   padding: 5px;
   margin: 5px;
@@ -165,7 +157,6 @@ ul.filter-list {
   width: 3%;
   float: left;
   display: block;
-  /*! margin-top: ; */
   position: relative;
   top: 39px;
   left: 10px;
