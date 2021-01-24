@@ -2,6 +2,9 @@
 const input = document.querySelector('#input-main');
 const ul = document.querySelector('.list');
 let li = document.querySelectorAll('.list li');
+const arrowBtn = document.querySelector('#arrow-btn');
+let select = document.querySelector('.checkbox-class');
+
 let tasks = [];
 
 input.addEventListener('keypress', function (event) {
@@ -37,15 +40,23 @@ let newTask = () => {
     //Чекбоксы
     let checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
+    checkbox.className = 'checkbox-class';
     checkbox.id = 'checkbox-id';
     link.appendChild(checkbox);
     ul.appendChild(link);
+
+    checkbox.addEventListener('change', function () {
+      if (this.checked) {
+        task.style.textDecoration = 'line-through';
+      } else {
+        task.style.textDecoration = 'none';
+      }
+    });
+
     //Всего задач
-    let allTask = document.querySelector('.all-count'),
-      list = document.querySelectorAll('.list > a');
+    let list = document.querySelectorAll('.list > a');
     tasks.push(list);
 
-    // -------------- Дописано:
     updateCount();
 
     //Функция удаления задачи
@@ -53,8 +64,6 @@ let newTask = () => {
       if (event.target.tagName === 'SPAN') {
         let close = event.target.parentNode;
         close.remove();
-
-        // -------------- Дописано:
         tasks.splice(tasks.indexOf(list), 1);
         updateCount();
       }
@@ -62,9 +71,29 @@ let newTask = () => {
   }
 };
 
-// -------------- Дописано:
+// Счетчик задач
 function updateCount() {
   let allTask = document.querySelector('.all-count');
   let count = tasks.length;
   allTask.textContent = `Всего задач: ${[count]}`;
 }
+
+//Выделение все задач//
+arrowBtn.addEventListener('click', () => {
+  let arrowBtn = document.getElementById('arrow-btn');
+  let check = document.querySelectorAll('input[type="checkbox"]');
+  for (let i = 0; i < check.length; i++) {
+    if (arrowBtn) {
+      check[i].checked = true;
+    }
+  }
+});
+
+// checkbox.addEventListener('click', function (event) {
+//   if (event.target.id === 'checkbox-id') {
+//     let lineTask = event.target.parentNode;
+//     lineTask.style.textDecoration = 'line-through';
+//   } else if (checkbox.checked === false) {
+//     lineTask.style.textDecoration = 'none';
+//   }
+// });

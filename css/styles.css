@@ -53,7 +53,7 @@ ul.list {
   display: none;
 }
 
-.list li {
+.list > a > li {
   padding: 14px;
   border: 1px solid #ccc;
   border-top: none;
@@ -64,11 +64,11 @@ ul.list {
   background-color: rgba(217, 245, 236, 0.973);
 }
 
-ul li.checked {
+/* ul li.checked {
   background: rgb(158, 123, 123);
   color: #fff;
   text-decoration: line-through;
-}
+} */
 
 .close {
   position: relative;
@@ -114,8 +114,9 @@ ul#list-id.list a:hover span.close {
 }
 
 .checked {
+  color: #fff;
   text-decoration: line-through;
-  background-color: indianred;
+  background-color: rosybrown;
 }
 
 #count {
