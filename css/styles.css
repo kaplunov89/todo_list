@@ -109,14 +109,18 @@ ul#list-id.list a:hover span.close {
   width: 30px;
   margin: 7px;
   position: relative;
-  top: -42px;
+  top: -50px;
   font-size: 17px;
+  height: 30px;
+  /*! left: 5px; */
 }
 
 .checked {
   color: #fff;
   text-decoration: line-through;
   background-color: rosybrown;
+}
+.unchecked {
 }
 
 #count {
@@ -132,16 +136,17 @@ li {
   list-style-type: none;
 }
 
-ul.filter-list {
+.filter-list {
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  justify-content: space-between;
+  /*! align-items: flex-end; */
   margin-top: 5px;
   display: none;
+  /*! width: 520px; */
 }
 .all-count {
-  float: left;
-  position: relative;
+  /*! float: left; */
+  /*! position: relative; */
   left: -119px;
   color: #969595;
 }
@@ -149,7 +154,9 @@ ul.filter-list {
   padding: 5px;
   margin: 5px;
 }
-
+#clear-complated {
+  display: none;
+}
 .filter-list a {
   color: #969595;
 }
